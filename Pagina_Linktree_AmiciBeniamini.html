@@ -54,7 +54,7 @@
   <img src="logo.png" alt="Logo Amici Beniamini" class="logo" />
 
   <!-- WhatsApp link -->
-  <a class="link-button" href="https://wa.me/393793074305" target="_blank">
+  <a class="link-button" href="https://wa.me/393292195839" target="_blank">
     <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
     Scrivici su WhatsApp
   </a>
@@ -65,13 +65,17 @@
     Seguici su Instagram
   </div>
 
-  <!-- Bottone Facebook -->
-  <div class="link-button" id="facebookButton" role="button" tabindex="0">
+  <!-- Bottone Facebook (link diretto al profilo web) -->
+  <a class="link-button" href="https://www.facebook.com/profile.php?id=61578827005572" target="_blank">
     <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
     Seguici su Facebook
-  </div>
+  </a>
 
   <script>
+    document.getElementById('instagramButton').addEventListener('click', function () {
+      openAppOrWeb('instagram://user?username=amicibeniamini', 'https://www.instagram.com/amicibeniamini/');
+    });
+
     // Funzione generica per tentare apertura app + fallback web
     function openAppOrWeb(appUrl, webUrl) {
       const start = Date.now();
@@ -83,15 +87,6 @@
         }
       }, 1000);
     }
-
-    document.getElementById('facebookButton').addEventListener('click', function () {
-      openAppOrWeb('fb://page/61578827005572', 'https://www.facebook.com/profile.php?id=61578827005572');
-    });
-
-    document.getElementById('instagramButton').addEventListener('click', function () {
-      openAppOrWeb('instagram://user?username=amicibeniamini', 'https://www.instagram.com/amicibeniamini/');
-    });
   </script>
 </body>
 </html>
-
