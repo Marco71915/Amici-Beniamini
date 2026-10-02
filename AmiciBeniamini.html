@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amici Beniamini - Link Page</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+
+      /* Sfondo a colore unico */
+      background: #fdeed6;
+
+      text-align: center;
+      padding: 2rem;
+      color: white;
+    }
+
+    .logo {
+      max-width: 350px;
+      border-radius: 0;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .link-button:hover {
+      transform: scale(1.03);
+      background: #f7f7f7;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+
+    /* Powered by */
+    .powered {
+      margin-top: 2rem;
+      color: #000000;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .powered a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .powered a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Logo -->
+  <img
+    src="logo.png"
+    alt="Logo Amici Beniamini"
+    class="logo"
+  />
+
+  <!-- Bottone Google Recensioni -->
+  <a
+    class="link-button"
+    href="https://search.google.com/local/writereview?placeid=ChIJP0GbrpeFPxMRJi0Y1GRsGKk"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      class="icon"
+      src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+      alt="Google"
+    />
+    Lasciaci una Recensione
+  </a>
+
+  <!-- WhatsApp link -->
+  <a
+    class="link-button"
+    href="https://wa.me/393793591643"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      class="icon"
+      src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+      alt="WhatsApp"
+    />
+    Scrivici su WhatsApp
+  </a>
+
+  <!-- Bottone Instagram -->
+  <div
+    class="link-button"
+    id="instagramButton"
+    role="button"
+    tabindex="0"
+  >
+    <img
+      class="icon"
+      src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+      alt="Instagram"
+    />
+    Seguici su Instagram
+  </div>
+
+  <!-- Bottone Facebook -->
+  <a
+    class="link-button"
+    href="https://www.facebook.com/profile.php?id=61594747090926"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      class="icon"
+      src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+      alt="Facebook"
+    />
+    Seguici su Facebook
+  </a>
+
+  <!-- Powered by -->
+  <div class="powered">
+    Powered by
+    <a
+      href="https://sframe.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Sframe Technology
+    </a>
+  </div>
+
+  <script>
+    document
+      .getElementById('instagramButton')
+      .addEventListener('click', function () {
+        openAppOrWeb(
+          'instagram://user?username=amici_beniamini_castrovillari',
+          'https://www.instagram.com/amici_beniamini_castrovillari/'
+        );
+      });
+
+    // Funzione generica per tentare apertura app + fallback web
+    function openAppOrWeb(appUrl, webUrl) {
+      const start = Date.now();
+
+      window.location = appUrl;
+
+      setTimeout(function () {
+        if (Date.now() - start < 1500) {
+          window.open(webUrl, '_blank');
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
